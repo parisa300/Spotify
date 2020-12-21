@@ -1,0 +1,18 @@
+package com.base.spotifymvvm.exoplayer
+
+import android.support.v4.media.MediaMetadataCompat
+import com.base.spotifymvvm.data.entitie.Song
+
+
+fun MediaMetadataCompat.toSong() : Song? {
+return description?.let {
+    Song(
+        it.mediaId ?: "",
+        it.title.toString(),
+        it.subtitle.toString(),
+        it.mediaUri.toString(),
+        it.iconUri.toString()
+    )
+}
+
+}
